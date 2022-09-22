@@ -68,7 +68,7 @@ function determineWinner(player, cpu) {
 
         // User input is not "Rock", "Paper", or "Scissors"
        default:
-           return "You didn't choose Rock, Paper, or Scissors!" 
+           return "You didn't choose Rock, Paper, or Scissors!";
     }
 }
 
