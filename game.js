@@ -74,22 +74,22 @@ function determineWinner(player, cpu) {
 }
 
 // Runs a game (5 rounds)
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    let roundResult, slice;
+// function game() {
+//     let playerScore = 0;
+//     let computerScore = 0;
+//     let roundResult, slice;
 
-    for (let i = 0; i < 5; i++) {
-        roundResult = playRound();
-        slice = roundResult.slice(0,5);
-        if (slice == "You W") {
-            ++playerScore;
-        }
-        else if (slice == "You L") {
-            ++computerScore;
-        }
-        else {}
-    }
+//     for (let i = 0; i < 5; i++) {
+//         roundResult = playRound();
+//         slice = roundResult.slice(0,5);
+//         if (slice == "You W") {
+//             ++playerScore;
+//         }
+//         else if (slice == "You L") {
+//             ++computerScore;
+//         }
+//         else {}
+//     }
 
-    console.log(`Final Score: Player (${playerScore}) vs CPU (${computerScore})`);
-}
+//     console.log(`Final Score: Player (${playerScore}) vs CPU (${computerScore})`);
+// }
