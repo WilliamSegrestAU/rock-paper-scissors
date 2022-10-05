@@ -1,4 +1,6 @@
 const choice = ['Rock', 'Paper', 'Scissors'];
+let playerScore = 0;
+let cpuScore = 0;
 let container = document.getElementById('container')
 
 
@@ -34,7 +36,9 @@ function playRound(value) {
     let div = document.createElement('div');
     div.textContent = result;
     container.appendChild(div);
-    return result;
+
+    keepScore(result);
+    endGame();
 }
 
 // Based on user input and CPU choice, function will determine round winner
@@ -82,6 +86,40 @@ function determineWinner(player, cpu) {
     }
 }
 
+// Serves purpose to keep track of score
+function keepScore(val) {
+    slice = val.slice(0,5);
+    if (slice == "You W") {
+        ++playerScore;
+    }
+    else if (slice == "You L") {
+        ++cpuScore;
+    }
+    else {}
+
+    if (container.childElementCount > 1) {
+        container.removeChild(container.firstChild);
+    }
+    let resultDiv = document.createElement('div');
+    resultDiv.textContent = `Player: ${playerScore} vs CPU: ${cpuScore} `;
+    container.appendChild(resultDiv);
+ }
+
+ // Will end the game once a score reaches 5
+ function endGame() {
+    if (playerScore == 5) {;
+        let winDiv = document.createElement('div');
+        winDiv.textContent = 'You Win!';
+        container.replaceChild(winDiv, container.firstChild);
+    }
+    else if (cpuScore == 5) {
+        let winDiv = document.createElement('div');
+        winDiv.textContent = 'You Lose!';
+        container.replaceChild(winDiv, container.firstChild);
+    }
+    else {}
+ }
+
 // Runs a game (5 rounds)
 // function game() {
 //     let playerScore = 0;
@@ -91,13 +129,13 @@ function determineWinner(player, cpu) {
 //     for (let i = 0; i < 5; i++) {
 //         roundResult = playRound();
 //         slice = roundResult.slice(0,5);
-//         if (slice == "You W") {
-//             ++playerScore;
-//         }
-//         else if (slice == "You L") {
-//             ++computerScore;
-//         }
-//         else {}
+        // if (slice == "You W") {
+        //     ++playerScore;
+        // }
+        // else if (slice == "You L") {
+        //     ++computerScore;
+        // }
+        // else {}
 //     }
 
 //     console.log(`Final Score: Player (${playerScore}) vs CPU (${computerScore})`);
