@@ -1,4 +1,5 @@
 const choice = ['Rock', 'Paper', 'Scissors'];
+let container = document.getElementById('container')
 
 
 // Plays as the CPU.
@@ -25,7 +26,14 @@ function playRound(value) {
     let CPU = getComputerChoice();
 
     let result = determineWinner(Player, CPU);
-    console.log(result);
+
+    if (container.childElementCount) {
+        container.removeChild(container.firstChild);
+    }
+
+    let div = document.createElement('div');
+    div.textContent = result;
+    container.appendChild(div);
     return result;
 }
 
