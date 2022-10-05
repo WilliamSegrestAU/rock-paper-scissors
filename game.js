@@ -12,15 +12,16 @@ function getComputerChoice() {
 }
 
 // Asks for user input
-function getPlayerChoice() {
-    let choice = prompt("Rock, Paper, or Scissors?");
+// function getPlayerChoice() {
+//     let choice = prompt("Rock, Paper, or Scissors?");
 
-    return choice;
-}
+//     return choice;
+// }
 
 // Serves as a round played of 'Rock', 'Paper', 'Scissors'
-function playRound() {
-    let Player = getPlayerChoice();
+function playRound(value) {
+    // let Player = getPlayerChoice();
+    let Player = value;
     let CPU = getComputerChoice();
 
     let result = determineWinner(Player, CPU);
@@ -93,3 +94,11 @@ function determineWinner(player, cpu) {
 
 //     console.log(`Final Score: Player (${playerScore}) vs CPU (${computerScore})`);
 // }
+
+let buttons = document.querySelectorAll('button');
+buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        playRound(e.target.value);
+    });
+});
+
