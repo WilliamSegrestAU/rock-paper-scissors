@@ -95,6 +95,7 @@ function determineWinner(player, cpu) {
 //     console.log(`Final Score: Player (${playerScore}) vs CPU (${computerScore})`);
 // }
 
+// Looks for click event for corresponding button value
 let buttons = document.querySelectorAll('button');
 buttons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
