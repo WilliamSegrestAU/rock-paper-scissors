@@ -14,13 +14,6 @@ function getComputerChoice() {
     return choice[index];
 }
 
-// Asks for user input
-// function getPlayerChoice() {
-//     let choice = prompt("Rock, Paper, or Scissors?");
-
-//     return choice;
-// }
-
 // Serves as a round played of 'Rock', 'Paper', 'Scissors'
 function playRound(value) {
     // let Player = getPlayerChoice();
@@ -119,27 +112,6 @@ function keepScore(val) {
     }
     else {}
  }
-
-// Runs a game (5 rounds)
-// function game() {
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     let roundResult, slice;
-
-//     for (let i = 0; i < 5; i++) {
-//         roundResult = playRound();
-//         slice = roundResult.slice(0,5);
-        // if (slice == "You W") {
-        //     ++playerScore;
-        // }
-        // else if (slice == "You L") {
-        //     ++computerScore;
-        // }
-        // else {}
-//     }
-
-//     console.log(`Final Score: Player (${playerScore}) vs CPU (${computerScore})`);
-// }
 
 // Looks for click event for corresponding button value
 let buttons = document.querySelectorAll('button');
