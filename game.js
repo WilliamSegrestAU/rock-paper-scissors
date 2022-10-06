@@ -2,7 +2,7 @@ const choice = ['Rock', 'Paper', 'Scissors'];
 let playerScore = 0;
 let cpuScore = 0;
 let container = document.getElementById('container')
-let btn_container = document.getElementsByClassName('btn_container');
+let gameContainer = document.querySelector('.game_container');
 
 
 // Plays as the CPU.
@@ -106,12 +106,14 @@ function keepScore(val) {
         winDiv.textContent = 'You Win!';
         container.replaceChild(winDiv, container.firstChild);
         disableButtons();
+        playAgain();
     }
     else if (cpuScore == 5) {
         let winDiv = document.createElement('div');
         winDiv.textContent = 'You Lose!';
         container.replaceChild(winDiv, container.firstChild);
         disableButtons();
+        playAgain();
     }
     else {}
  }
@@ -123,8 +125,19 @@ function keepScore(val) {
     }); // Disable all the buttons
  }
 
+ // After game finishes, a play again button will apear
+ // This button refreshes the page
+ function playAgain() {
+     let playAgainBtn = document.createElement('button');
+     playAgainBtn.textContent = 'Play Again?';
+     gameContainer.appendChild(playAgainBtn);
+     playAgainBtn.addEventListener('click', () => {
+        location.reload();  // Upon click, this refreshes the current document
+     });
+ }
+
 // Looks for click event for corresponding button value
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('.opt_btn');
 buttons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         playRound(e.target.value);
