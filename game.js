@@ -2,6 +2,7 @@ const choice = ['Rock', 'Paper', 'Scissors'];
 let playerScore = 0;
 let cpuScore = 0;
 let container = document.getElementById('container')
+let btn_container = document.getElementsByClassName('btn_container');
 
 
 // Plays as the CPU.
@@ -104,13 +105,22 @@ function keepScore(val) {
         let winDiv = document.createElement('div');
         winDiv.textContent = 'You Win!';
         container.replaceChild(winDiv, container.firstChild);
+        disableButtons();
     }
     else if (cpuScore == 5) {
         let winDiv = document.createElement('div');
         winDiv.textContent = 'You Lose!';
         container.replaceChild(winDiv, container.firstChild);
+        disableButtons();
     }
     else {}
+ }
+
+ // After game finishes, retry button will repear to refresh page
+ function disableButtons() {
+    buttons.forEach((btn) => {
+        btn.disabled = true;
+    }); // Disable all the buttons
  }
 
 // Looks for click event for corresponding button value
