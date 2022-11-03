@@ -1,5 +1,7 @@
-html {
-    background-color: #c4c4c4;
+:root, html {
+    background-color: #00223ddf;
+    margin: 0;
+    height: 100%;
 }
 
 body {
@@ -11,15 +13,42 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    row-gap: 48px;
 }
 
 .results{
-    width: 600px;
-    height: 300px;
-    background-color: #f4f4f4;
+    color: wheat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.title_container {
+    display: flex;
+    font-size: 7rem;
+    font-family: 'dovetail-mvb', serif;
+    font-weight: 700;
+    font-style: normal;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 10vh;
+    margin-left: 20px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.389);
+}
+
+#title {
+    margin-right: 30px;
+    transition: all .3s ease;
+}
+
+.opt_btn {
+    margin: 0 45px;
+    width: 100px;
+    height: 100px;
+    padding: 150px;
+    border: white 8px solid;
+    background-color: transparent;
+    border-radius: 5%;
 }
