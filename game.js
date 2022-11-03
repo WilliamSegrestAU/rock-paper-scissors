@@ -136,11 +136,38 @@ function keepScore(val) {
      });
  }
 
-// Looks for click event for corresponding button value
+ let titles = document.querySelectorAll('#title');
+ let rock = document.querySelector('.rock_title');
+ let paper = document.querySelector('.paper_title');
+ let scissors = document.querySelector('.scissors_title');
+
 let buttons = document.querySelectorAll('.opt_btn');
 buttons.forEach((btn) => {
+    // Looks for click event for corresponding button value
     btn.addEventListener('click', (e) => {
         playRound(e.target.value);
+    });
+    // Looks for mouse over event for corresponding button value
+    btn.addEventListener('mouseover', (e) => {
+        if (e.target.value == 'rock') {
+            rock.style.color = 'white';
+            rock.style.fontSize = '8rem';
+        }
+        else if (e.target.value == 'paper') {
+            paper.style.color = 'white';
+            paper.style.fontSize = '8rem';
+        }
+        else {
+            scissors.style.color = 'white';
+            scissors.style.fontSize = '8rem';
+        }
+    });
+    // Looks for mouse out event; resets title
+    btn.addEventListener('mouseout', () => {
+        titles.forEach((title) => {
+            title.style.color = 'rgba(255, 255, 255, 0.389)';
+            title.style.fontSize = '7rem';
+        });
     });
 });
 
