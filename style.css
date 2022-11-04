@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20%;
     margin: 15%;
 }
 
@@ -47,6 +48,7 @@ body {
 }
 
 .opt_btn {
+    margin-top: 30px;
     margin: 0 45px;
     width: 100px;
     height: 100px;
@@ -57,7 +59,7 @@ body {
 }
 
 .results {
-    margin-top: 15vh;
+    margin-top: 5vh;
     font-size: 3rem;
     font-weight: 700;
 }
@@ -72,4 +74,11 @@ button {
         background-color: transparent;
         text-align: center;
         font-family: 'dovetail-mvb', serif;
+}
+
+.img {
+    width: 15vh;
+    position: relative;
+    bottom: 95px;
+    right: 105px;
 }
