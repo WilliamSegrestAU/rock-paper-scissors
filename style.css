@@ -2,9 +2,13 @@
     background-color: #00223ddf;
     margin: 0;
     height: 100%;
+    font-family: 'dovetail-mvb', serif;
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 15%;
 }
 
@@ -26,7 +30,6 @@ body {
 .title_container {
     display: flex;
     font-size: 7rem;
-    font-family: 'dovetail-mvb', serif;
     font-weight: 700;
     font-style: normal;
     justify-content: center;
@@ -51,4 +54,22 @@ body {
     border: white 8px solid;
     background-color: transparent;
     border-radius: 5%;
+}
+
+.results {
+    margin-top: 15vh;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+button {
+        transition: all .3s ease;
+        margin-top: 75px;
+        margin-left: 15px;
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.389);
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        font-family: 'dovetail-mvb', serif;
 }
