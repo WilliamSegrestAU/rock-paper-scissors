@@ -56,8 +56,8 @@ body {
     border: white 8px solid;
     background-color: transparent;
     border-radius: 5%;
+    transition: all .3s ease;
 }
-
 .results {
     margin-top: 5vh;
     font-size: 3rem;

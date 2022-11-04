@@ -132,6 +132,9 @@ function keepScore(val) {
         title.style.color = 'rgba(255, 255, 255, 0.389)';
         title.style.fontSize = '7rem';
     });
+    buttons.forEach((btn) => {
+        btn.style.boxShadow = 'none';
+    })
  }
 
  // After game finishes, a play again button will apear
@@ -172,14 +175,17 @@ buttons.forEach((btn) => {
         if (e.target.value == 'rock') {
             rock.style.color = 'white';
             rock.style.fontSize = '8rem';
+            btn.style.boxShadow = 'rgba(255, 255, 255, 0.8) 0px 1px 18px';
         }
         else if (e.target.value == 'paper') {
             paper.style.color = 'white';
             paper.style.fontSize = '8rem';
+            btn.style.boxShadow = 'rgba(255, 255, 255, 0.8) 0px 1px 18px';
         }
         else {
             scissors.style.color = 'white';
             scissors.style.fontSize = '8rem';
+            btn.style.boxShadow = 'rgba(255, 255, 255, 0.8) 0px 1px 18px';
         }
     });
     // Looks for mouse out event; resets title
