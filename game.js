@@ -105,6 +105,7 @@ function keepScore(val) {
         let winDiv = document.createElement('div');
         winDiv.textContent = 'You Win!';
         container.replaceChild(winDiv, container.firstChild);
+        resetTitle();
         disableButtons();
         playAgain();
     }
@@ -112,6 +113,7 @@ function keepScore(val) {
         let winDiv = document.createElement('div');
         winDiv.textContent = 'You Lose!';
         container.replaceChild(winDiv, container.firstChild);
+        resetTitle();
         disableButtons();
         playAgain();
     }
@@ -125,15 +127,33 @@ function keepScore(val) {
     }); // Disable all the buttons
  }
 
+ function resetTitle() {
+    titles.forEach((title) => {
+        title.style.color = 'rgba(255, 255, 255, 0.389)';
+        title.style.fontSize = '7rem';
+    });
+ }
+
  // After game finishes, a play again button will apear
  // This button refreshes the page
  function playAgain() {
      let playAgainBtn = document.createElement('button');
      playAgainBtn.textContent = 'Play Again?';
+
      gameContainer.appendChild(playAgainBtn);
-     playAgainBtn.addEventListener('click', () => {
+
+    playAgainBtn.addEventListener('mouseover', () => {
+        playAgainBtn.style.color = 'white';
+        playAgainBtn.style.fontSize = '5rem';
+    });
+    playAgainBtn.addEventListener('mouseleave', () => {
+        playAgainBtn.style.color = 'rgba(255, 255, 255, 0.389)';
+        playAgainBtn.style.fontSize = '4rem';
+    });
+
+    playAgainBtn.addEventListener('click', () => {
         location.reload();  // Upon click, this refreshes the current document
-     });
+    });
  }
 
  let titles = document.querySelectorAll('#title');
@@ -163,11 +183,6 @@ buttons.forEach((btn) => {
         }
     });
     // Looks for mouse out event; resets title
-    btn.addEventListener('mouseout', () => {
-        titles.forEach((title) => {
-            title.style.color = 'rgba(255, 255, 255, 0.389)';
-            title.style.fontSize = '7rem';
-        });
-    });
+    btn.addEventListener('mouseout', resetTitle);
 });
 
